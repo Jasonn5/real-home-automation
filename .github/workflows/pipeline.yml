@@ -2,9 +2,9 @@ name: EspoCRM Pipeline Execution test by team Qates
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ development ]
   pull_request:
-    branches: [ develop ]
+    branches: [ development ]
     types: [ opened, reopened, synchronize ]
   schedule: 
     - cron: '0 */12 * * *'
