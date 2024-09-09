@@ -1,4 +1,4 @@
-name: EspoCRM Pipeline Execution test by team Qates
+name: Real Home Pipeline Execution test by Jeyson Valdivia
 
 on:
   push:
