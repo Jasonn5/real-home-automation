@@ -1,1 +1,1 @@
-BASE_URI = 'https://property-manager-server.azurewebsites.net/api'
+BASE_URI = 'https://real-home.azurewebsites.net/api'
