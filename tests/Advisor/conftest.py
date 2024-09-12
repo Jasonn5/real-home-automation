@@ -7,6 +7,11 @@ def advisor_payload():
     with open('core/payloads/advisor.json', 'r') as file:
         return json.load(file)
 
+@pytest.fixture(scope="module")
+def advisor_patch_payload():
+    with open('core/payloads/advisor_patch_payload.json', 'r') as file:
+        return json.load(file)
+
 
 @pytest.fixture(scope="module")
 def unique_user_data():
