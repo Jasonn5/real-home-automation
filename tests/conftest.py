@@ -12,7 +12,7 @@ def get_headers():
             "password": password,
             "confirmPassword": confirm_password
         }
-        response = RealHomeRequest.post_json(url, headers, data)
+        response = RealHomeRequest.post(url, headers, data)
         token = response.json().get('token')
         if not token:
             raise ValueError("No se pudo obtener el token de autenticación.")

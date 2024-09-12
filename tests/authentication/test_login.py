@@ -18,7 +18,7 @@ import pytest
 @pytest.mark.smoke
 def test_get_login_success(get_header, valid_credentials):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, valid_credentials)
+    response = RealHomeRequest.post(url, get_header, valid_credentials)
 
     assert_status_code_ok(response)
 
@@ -33,7 +33,7 @@ def test_get_login_success(get_header, valid_credentials):
 @pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_username(get_header, invalid_username):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, invalid_username)
+    response = RealHomeRequest.post(url, get_header, invalid_username)
     assert_status_code_unauthorized(response)
 
 
@@ -47,7 +47,7 @@ def test_get_login_invalid_username(get_header, invalid_username):
 @pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_password(get_header, invalid_password):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, invalid_password)
+    response = RealHomeRequest.post(url, get_header, invalid_password)
     assert_status_code_unauthorized(response)
 
 
@@ -61,7 +61,7 @@ def test_get_login_invalid_password(get_header, invalid_password):
 @pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_credentials(get_header, invalid_credentials):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, invalid_credentials)
+    response = RealHomeRequest.post(url, get_header, invalid_credentials)
     assert_status_code_unauthorized(response)
 
 
@@ -74,7 +74,7 @@ def test_get_login_invalid_credentials(get_header, invalid_credentials):
 @pytest.mark.negative
 def test_get_login_empty_fields(get_header, empty_fields):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, empty_fields)
+    response = RealHomeRequest.post(url, get_header, empty_fields)
 
     assert_status_code_bad_request(response)
 
@@ -88,7 +88,7 @@ def test_get_login_empty_fields(get_header, empty_fields):
 @pytest.mark.negative
 def test_get_login_empty_username(get_header, empty_username):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, empty_username)
+    response = RealHomeRequest.post(url, get_header, empty_username)
 
     assert_status_code_internal_server_error(response)
 
@@ -102,7 +102,7 @@ def test_get_login_empty_username(get_header, empty_username):
 @pytest.mark.negative
 def test_get_login_empty_password(get_header, empty_password):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, empty_password)
+    response = RealHomeRequest.post(url, get_header, empty_password)
 
     assert_status_code_bad_request(response)
 
@@ -116,7 +116,7 @@ def test_get_login_empty_password(get_header, empty_password):
 @pytest.mark.negative
 def test_get_login_valid_username_empty_password(get_header, valid_username_empty_password):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, valid_username_empty_password)
+    response = RealHomeRequest.post(url, get_header, valid_username_empty_password)
 
     assert_status_code_bad_request(response)
 
@@ -131,7 +131,7 @@ def test_get_login_valid_username_empty_password(get_header, valid_username_empt
 @pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_empty_username_valid_password(get_header, empty_username_valid_password):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, empty_username_valid_password)
+    response = RealHomeRequest.post(url, get_header, empty_username_valid_password)
 
     assert_status_code_bad_request(response)
 
@@ -145,7 +145,7 @@ def test_get_login_empty_username_valid_password(get_header, empty_username_vali
 @pytest.mark.negative
 def test_get_login_mismatched_passwords(get_header, mismatched_passwords):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, mismatched_passwords)
+    response = RealHomeRequest.post(url, get_header, mismatched_passwords)
 
     assert_status_code_bad_request(response)
 
@@ -159,6 +159,6 @@ def test_get_login_mismatched_passwords(get_header, mismatched_passwords):
 @pytest.mark.negative
 def test_get_login_missing_confirm_password(get_header, missing_confirm_password):
     url = AuthenticationEndpoints.authenticate()
-    response = RealHomeRequest.post_json(url, get_header, missing_confirm_password)
+    response = RealHomeRequest.post(url, get_header, missing_confirm_password)
 
     assert_status_code_bad_request(response)
