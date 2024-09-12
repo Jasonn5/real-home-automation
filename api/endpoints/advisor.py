@@ -10,6 +10,9 @@ class AdvisorEndpoints:
         return f"{BASE_URI}/advisor"
 
     @staticmethod
+    def get_advisor_by_id(advisor_id):
+        return f"{BASE_URI}/advisor/{advisor_id}"
+    @staticmethod
     def update_advisor():
         return f"{BASE_URI}/advisor"
 
