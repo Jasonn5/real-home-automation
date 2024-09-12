@@ -16,7 +16,7 @@ def assert_status_code_unauthorized(response):
 def assert_status_code_forbidden(response):
     assert response.status_code == 403, f"Expected status code 403 but got {response.status_code}. Error message: {extract_error_message(response)}"
 
-def assert_status_bad_request(response):
+def assert_status_code_bad_request(response):
     assert response.status_code == 400, f"Expected status code 400 but got {response.status_code}. Error message: {extract_error_message(response)}"
 
 def assert_status_code_method_not_allowed(response):

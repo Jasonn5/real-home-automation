@@ -40,7 +40,7 @@ def test_post_advisor_without_first_name(get_headers, advisor_payload, unique_us
     advisor_payload['user']['email'] = unique_email
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -57,7 +57,7 @@ def test_post_advisor_invalid_email_format(get_headers, advisor_payload):
     advisor_payload['user']['email'] = "invalid-email"
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -73,7 +73,7 @@ def test_post_advisor_without_email(get_headers, advisor_payload):
     advisor_payload['user'].pop('email')
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -88,7 +88,7 @@ def test_post_advisor_with_empty_fields(get_headers, advisor_payload):
     empty_payload = {}
     response = RealHomeRequest.post_json(url, headers, empty_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 
 @allure.suite('Advisor')
@@ -108,7 +108,7 @@ def test_post_advisor_future_birthdate(get_headers, advisor_payload, unique_user
     advisor_payload['user']['email'] = unique_email
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -127,7 +127,7 @@ def test_post_advisor_invalid_birthdate_format(get_headers, advisor_payload, uni
     advisor_payload['user']['email'] = unique_email
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -146,7 +146,7 @@ def test_post_advisor_invalid_cellphone(get_headers, advisor_payload, unique_use
     advisor_payload['user']['email'] = unique_email
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
@@ -164,7 +164,7 @@ def test_post_advisor_duplicate_email(get_headers, advisor_payload, unique_user_
     advisor_payload['user']['email'] = duplicate_email
     response = RealHomeRequest.post_json(url, headers, advisor_payload)
 
-    assert_status_bad_request(response)
+    assert_status_code_bad_request(response)
 
 
 @allure.suite('Advisor')
