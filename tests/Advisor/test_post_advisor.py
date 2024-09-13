@@ -4,6 +4,7 @@ from api.endpoints.advisor import AdvisorEndpoints
 from resources.auth.auth import Auth
 from api.request.api_request import RealHomeRequest
 from core.assertions.status_code import *
+
 @allure.suite('Advisor')
 @allure.epic('Crate Advisor Account')
 @allure.feature('Advisor')
