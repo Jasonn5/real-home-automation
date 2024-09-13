@@ -92,7 +92,6 @@ def test_reset_password_with_invalid_authentication_token(reset_password_payload
         'Content-Type': 'application/json-patch+json',
         'Authorization': 'Bearer invalid_token'
     }
-
     response = RealHomeRequest.post(url, headers, reset_password_payload)
 
     assert_status_code_unauthorized(response)
