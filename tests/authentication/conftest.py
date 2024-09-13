@@ -17,6 +17,12 @@ def user_credentials():
 def change_password_payload():
     with open('core/payloads/change_password.json', 'r') as file:
         return json.load(file)
+
+@pytest.fixture(scope="module")
+def reset_password_payload():
+    with open('core/payloads/reset_password.json', 'r') as file:
+        return json.load(file)
+
 @pytest.fixture(scope="module")
 def valid_credentials(user_credentials):
     return user_credentials["valid_credentials"]
