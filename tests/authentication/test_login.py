@@ -30,7 +30,6 @@ def test_get_login_success(get_header, valid_credentials):
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_username(get_header, invalid_username):
     url = AuthenticationEndpoints.authenticate()
     response = RealHomeRequest.post(url, get_header, invalid_username)
@@ -44,7 +43,6 @@ def test_get_login_invalid_username(get_header, invalid_username):
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_password(get_header, invalid_password):
     url = AuthenticationEndpoints.authenticate()
     response = RealHomeRequest.post(url, get_header, invalid_password)
@@ -58,7 +56,6 @@ def test_get_login_invalid_password(get_header, invalid_password):
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_invalid_credentials(get_header, invalid_credentials):
     url = AuthenticationEndpoints.authenticate()
     response = RealHomeRequest.post(url, get_header, invalid_credentials)
@@ -128,7 +125,6 @@ def test_get_login_valid_username_empty_password(get_header, valid_username_empt
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
-@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_get_login_empty_username_valid_password(get_header, empty_username_valid_password):
     url = AuthenticationEndpoints.authenticate()
     response = RealHomeRequest.post(url, get_header, empty_username_valid_password)
