@@ -2,11 +2,11 @@ name: Real Home Pipeline Execution test by Jeyson Valdivia
 
 on:
   push:
-    branches: [ development ]
+    branches: [development]
   pull_request:
-    branches: [ development ]
-    types: [ opened, reopened, synchronize ]
-  schedule: 
+    branches: [development]
+    types: [opened, reopened, synchronize]
+  schedule:
     - cron: '0 */12 * * *'
   workflow_dispatch:
 
@@ -17,8 +17,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -52,7 +50,7 @@ jobs:
         allure_report: allure-report
         allure_history: allure-history
 
-    - name: Deploy report to Github Pages
+    - name: Deploy Allure report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -60,5 +58,39 @@ jobs:
         publish_branch: gh-pages
         publish_dir: allure-report
 
+  load_test:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies for Locust
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run Locust load test and generate CSV
+      run: |
+        source venv/bin/activate
+        locust -f tests/stress/locustfile.py --host=https://real-home.azurewebsites.net --csv=locust_output --headless -u 5 -r 1 -t 5m
+
+    - name: Upload Locust results
+      uses: actions/upload-artifact@v3
+      with:
+        name: locust-results
+        path: locust_output*
+
+    - name: Deploy Locust results to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_PAT }}
+        publish_branch: gh-pages
+        publish_dir: locust-results

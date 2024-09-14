@@ -5,10 +5,11 @@ from resources.auth.auth import Auth
 from api.request.api_request import RealHomeRequest
 from core.assertions.status_code import *
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Valid Data')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Valid Data')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -19,10 +20,11 @@ def test_patch_advisor_with_valid_data(get_headers, advisor_patch_payload):
 
     assert_status_code_ok(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty First Name')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty First Name')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -35,10 +37,11 @@ def test_patch_advisor_with_empty_first_name(get_headers, advisor_patch_payload)
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty Last Name')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty Last Name')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -51,10 +54,11 @@ def test_patch_advisor_with_empty_last_name(get_headers, advisor_patch_payload):
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty CI')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty CI')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -67,10 +71,11 @@ def test_patch_advisor_with_empty_ci(get_headers, advisor_patch_payload):
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Invalid CI Length')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Invalid CI Length')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -83,10 +88,11 @@ def test_patch_advisor_with_invalid_ci_length(get_headers, advisor_patch_payload
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty Cell Phone')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty Cell Phone')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -99,10 +105,11 @@ def test_patch_advisor_with_empty_cellphone(get_headers, advisor_patch_payload):
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Invalid Cell Phone Format')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Invalid Cell Phone Format')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -115,10 +122,11 @@ def test_patch_advisor_with_invalid_cellphone_format(get_headers, advisor_patch_
 
     assert_status_code_bad_request(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty Address')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty Address')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -131,10 +139,11 @@ def test_patch_advisor_with_empty_address(get_headers, advisor_patch_payload):
 
     assert_status_code_ok(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty FanPageUrl')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty FanPageUrl')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -147,10 +156,11 @@ def test_patch_advisor_with_empty_fanpage(get_headers, advisor_patch_payload):
 
     assert_status_code_ok(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Invalid Authentication Token')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Invalid Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
@@ -162,10 +172,11 @@ def test_patch_advisor_with_invalid_auth_token(advisor_patch_payload):
 
     assert_status_code_unauthorized(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor without Authentication Token')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor without Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.smoke
@@ -176,10 +187,11 @@ def test_patch_advisor_without_authentication(advisor_patch_payload):
 
     assert_status_code_unauthorized(response)
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated First Name Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated First Name Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -193,10 +205,11 @@ def test_patch_advisor_with_only_first_name(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['firstName'] == "NuevoNombre", "El nombre no fue actualizado correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated Last Name Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated Last Name Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -210,10 +223,11 @@ def test_patch_advisor_with_only_last_name(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['lastName'] == "NuevoApellido", "El apellido no fue actualizado correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated Email Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated Email Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -227,10 +241,11 @@ def test_patch_advisor_with_only_email(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['email'] == "nuevoemail@gmail.com", "El email no fue actualizado correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated Cell Phone Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated Cell Phone Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -244,10 +259,11 @@ def test_patch_advisor_with_only_cellphone(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['cellPhone'] == 12345678, "El teléfono no fue actualizado correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated Address Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated Address Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -261,10 +277,11 @@ def test_patch_advisor_with_only_address(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['address'] == "Nueva dirección", "La dirección no fue actualizada correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Updated FanPageUrl Only')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Updated FanPageUrl Only')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.smoke
@@ -278,10 +295,11 @@ def test_patch_advisor_with_only_fanpage(get_headers, advisor_patch_payload):
     assert_status_code_ok(response)
     assert response.json()['fanPageUrl'] == "https://www.newfanpage.com", "La fan page no fue actualizada correctamente"
 
-@allure.suite('Advisor')
-@allure.epic('Update Advisor')
-@allure.feature('Advisor')
-@allure.story('Update Advisor with Empty Payload')
+@allure.suite('Update advisor')
+@allure.epic('Advisor')
+@allure.feature('Update advisor')
+@allure.story('Update advisor with Empty Payload')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 @pytest.mark.regression
