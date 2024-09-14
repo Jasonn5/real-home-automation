@@ -11,6 +11,7 @@ from resources.auth.auth import Auth
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User with Valid Email and Enable True')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 def test_enable_user_with_valid_email_and_enable_true(get_headers, enable_user_payload):
@@ -25,6 +26,7 @@ def test_enable_user_with_valid_email_and_enable_true(get_headers, enable_user_p
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User with Empty Email')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_with_empty_email(get_headers, enable_user_payload):
@@ -40,6 +42,7 @@ def test_enable_user_with_empty_email(get_headers, enable_user_payload):
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User with Invalid Email Format')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_with_invalid_email_format(get_headers, enable_user_payload):
@@ -55,6 +58,7 @@ def test_enable_user_with_invalid_email_format(get_headers, enable_user_payload)
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User without Enable Field')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_without_enable_field(get_headers, enable_user_payload):
@@ -70,6 +74,7 @@ def test_enable_user_without_enable_field(get_headers, enable_user_payload):
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User with Unregistered Email')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_with_unregistered_email(get_headers, enable_user_payload):
@@ -85,6 +90,7 @@ def test_enable_user_with_unregistered_email(get_headers, enable_user_payload):
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User without Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_without_authentication_token(get_header,enable_user_payload):
@@ -98,6 +104,7 @@ def test_enable_user_without_authentication_token(get_header,enable_user_payload
 @allure.epic('Authentication')
 @allure.feature('Enable User')
 @allure.story('Enable User with Invalid Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_enable_user_with_invalid_authentication_token(enable_user_payload):

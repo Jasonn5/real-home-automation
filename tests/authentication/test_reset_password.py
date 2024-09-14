@@ -11,6 +11,7 @@ from resources.auth.auth import Auth
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Valid Email and Password')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.positive
 def test_reset_password_with_valid_email_and_password(get_headers, reset_password_payload):
@@ -25,6 +26,7 @@ def test_reset_password_with_valid_email_and_password(get_headers, reset_passwor
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Empty Email')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_with_empty_email(get_headers, reset_password_payload):
@@ -40,6 +42,7 @@ def test_reset_password_with_empty_email(get_headers, reset_password_payload):
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Empty Password')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_with_empty_password(get_headers, reset_password_payload):
@@ -55,6 +58,7 @@ def test_reset_password_with_empty_password(get_headers, reset_password_payload)
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Invalid Email Format')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_with_invalid_email_format(get_headers, reset_password_payload):
@@ -70,6 +74,7 @@ def test_reset_password_with_invalid_email_format(get_headers, reset_password_pa
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password without Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_without_authentication_token(get_header,reset_password_payload):
@@ -83,6 +88,7 @@ def test_reset_password_without_authentication_token(get_header,reset_password_p
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Invalid Authentication Token')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_with_invalid_authentication_token(reset_password_payload):
@@ -101,6 +107,7 @@ def test_reset_password_with_invalid_authentication_token(reset_password_payload
 @allure.epic('Authentication')
 @allure.feature('Reset Password')
 @allure.story('Reset Password with Unregistered Email')
+@allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
 def test_reset_password_with_unregistered_email(get_headers, reset_password_payload):
