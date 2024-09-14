@@ -81,7 +81,7 @@ jobs:
         source venv/bin/activate
         locust -f tests/stress/locustfile.py --host=https://real-home.azurewebsites.net --csv=locust_output --headless -u 5 -r 1 -t 5m
 
-    - name: Upload Locust results
+    - name: Upload Locust results as artifacts
       uses: actions/upload-artifact@v3
       with:
         name: locust-results
@@ -93,4 +93,4 @@ jobs:
       with:
         github_token: ${{ secrets.GH_PAT }}
         publish_branch: gh-pages
-        publish_dir: locust-results
+        publish_dir: locust_output
