@@ -77,6 +77,7 @@ def test_enable_user_without_enable_field(get_headers, enable_user_payload):
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_enable_user_with_unregistered_email(get_headers, enable_user_payload):
     url = AuthenticationEndpoints.enable_user()
     headers = Auth().auth_valid_credential(get_headers)

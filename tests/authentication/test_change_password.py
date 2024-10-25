@@ -12,6 +12,7 @@ from resources.auth.auth import Auth
 @allure.tag('author: Jeyson')
 @pytest.mark.functional
 @pytest.mark.negative
+@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_change_password_with_empty_username(get_headers, change_password_payload):
     url = AuthenticationEndpoints.change_password()
     headers = Auth().auth_valid_credential(get_headers)

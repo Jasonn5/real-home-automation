@@ -1,1 +1,1 @@
-BASE_URI = 'https://real-home.azurewebsites.net/api'
+BASE_URI = 'https://real-home-prod.azurewebsites.net/api'
