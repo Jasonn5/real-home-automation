@@ -1,0 +1,16 @@
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+.idea
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+allure-results/
