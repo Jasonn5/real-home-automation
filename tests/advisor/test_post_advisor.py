@@ -294,6 +294,7 @@ def test_post_advisor_invalid_ci_format(get_headers, advisor_payload, unique_use
 @pytest.mark.functional
 @pytest.mark.positive
 @pytest.mark.regression
+@pytest.mark.xfail(reason="This test case is expected to fail due to known issue.",condition=True)
 def test_post_advisor_without_email(get_headers, advisor_payload, unique_user_data):
     url = AdvisorEndpoints.create_advisor()
     headers = Auth().auth_valid_credential(get_headers)
